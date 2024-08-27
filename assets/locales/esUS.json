@@ -1,0 +1,117 @@
+{
+  "esUS": {
+    "intro": {
+      "welcome": "Bienvenido a TheStaircase",
+      "description": "TheStaircase es un método alternativo para mejorar que se centra en crear una experiencia divertida y motivadora para el jugador. Utiliza restricciones de unidades para evitar que el jugador se sienta abrumado por la complejidad del juego y para fomentar la creatividad y la exploración. Utiliza puntos de referencia medibles para los elementos fundamentales de StarCraft 2: Recolectar y gastar recursos de manera eficiente. Estos puntos de referencia se registran [automáticamente], permitiendo al jugador dedicar toda su atención a jugar el juego.",
+      "rules": "Reglas Basicas",
+      "ruleOne": "Lee las reglas cuidadosamente en cada paso. (Si cambian!)",
+      "ruleTwo": "Solo usa las unidades que se te muestran en cada paso.",
+      "ruleThree": "Lee las sugerencias en cada paso.",
+      "suggestions": "Sugerencias Generales",
+      "suggestionOne": "Personalizar tus teclas de acceso rápido hará que sea más fácil jugar. Recomiendo usar TheCore Lite* o al menos usar el diseño de cuadrícula.",
+      "suggestionTwo": "Aprende a crear grupos y ubicaciones de cámaras.",
+      "suggestionThree": "No uses la tecla de acceso rápido para todo el ejército."
+    },
+    "info": {
+      "playerName": "Nombre de jugador",
+      "playerNameDescription": "Nombre de jugador en el juego (sin tag de clan)",
+      "race": "Raza",
+      "replays": "Repeticiones",
+      "replaysDescription": "Aquí es donde se almacenan tus repeticiones. Puedes obtenerlo entrando en StarCraft, en la pestaña de repeticiones, haz clic en Mostrar en la carpeta y copia la ruta desde la dirección del explorador.",
+      "replaysBrowse": "Buscar"
+    },
+    "global": {
+      "continue": "Continuar"
+    },
+    "steps": {
+      "stepone": "Primer Paso",
+      "steptwo": "Segundo Paso",
+      "stepthree": "Tercer Paso",
+      "stepfour": "Cuarto Paso",
+      "stepfive": "Quinto Paso",
+      "stepsix": "Sexto Paso",
+      "rules": {
+        "title": "Reglas",
+        "mineMinerals": "Minar minerales.",
+        "noGas": "No minar gas.",
+        "minimapAttack": "Atacar solo usando el minimapa.",
+        "noBabysitting": "No mirar tus batallas.",
+        "noCommandCard": "No puedes hacer clic en la tarjeta de comando.",
+        "unitsPerProduction": "No puedes hacer cola para más de dos unidades por instalación de producción.",
+        "productionPerBase": "No puedes crear más de %{supplyStructures} a la vez, donde b es el número de bases saturadas de minerales. (Una base saturada de minerales debe tener 16 trabajadores minando minerales.)",
+        "unitControl": "Controla tus unidades lo mejor que puedas.",
+        "mineGas": "Minar gas."
+      },
+      "terranSupplyStructures": "depósitos de suministros",
+      "zergSupplyStructures": "amos supremos",
+      "protossSupplyStructures": "pílones",
+      "units": {
+        "title": "Unidades",
+        "changeChosenUnits": {
+          "one": "Cambiar unidad elegida",
+          "many": "Cambiar unidades elegidas"
+        }
+      },
+      "progress": {
+        "title": "Progreso",
+        "description": "Para poder pasar al siguiente paso debes tener al menos cinco partidas con al menos 100 SQ (índice de gasto)",
+        "descriptionAfterCompletion": "Puedes pasar al siguiente paso, tienes al menos cinco partidas con al menos 100 SQ (índice de gasto).",
+        "status": {
+          "label": "Estado",
+          "gameNotOpened": "Juego no esta abierto",
+          "waitingForMatch": "Esperando partida",
+          "waitingForMatchEnd": "Esperando finalización de partida",
+          "analyzing": "Analizando última partida"
+        }
+      },
+      "motto": {
+        "title": "Tu nuevo lema",
+        "text": "Mi objetivo es mejorar. No intentaré ganar el juego ahora, me enfocaré en mejorar ahora. Mejoraré ahora para poder ganar después."
+      },
+      "suggestions": {
+        "title": "Sugerencias",
+        "haveFun": "¡Diviértete lo más posible en todo momento!",
+        "experiment": "¡Experimenta con las unidades tanto como sea posible!",
+        "focus": "Enfócate lo más posible en tus objetivos, y no en ganar el juego.",
+        "screenMovement": "Evita las teclas de flecha o mover el ratón hacia el borde de la pantalla para moverte.",
+        "screenPositions": "Haz clic en el minimapa y usa las teclas de ubicación para mover la pantalla.",
+        "hotkeys": "Usa teclas de acceso rápido, grupos de control y teclas de ubicación de cámara tanto como sea posible.",
+        "threeBasesNoGas": "Intenta llegar a 48 trabajadores (3 bases completamente saturadas).",
+        "aggressive": "Juega de manera agresiva; evita las defensas estáticas tanto como sea posible.",
+        "economy": "Intenta mantener tus recursos lo más bajo posible.",
+        "ccToOrbital": "Actualiza tus Centros de Comando principales y naturales a Comandos Orbitales lo antes posible.",
+        "ccEnergy": "Intenta mantener la energía de tus Comandos Orbitales baja.",
+        "nexusEnergy": "Intenta mantener la energía de tu Nexos baja.",
+        "queenEnergy": "Intenta mantener la energía de tus Reinas baja.",
+        "unitActive": "Intenta mantener al menos una unidad o grupo de unidades activo en el mapa después de tu primer explorador, esto ayudará a entrenar tu multitarea.",
+        "avoidBaseCamera": "Intenta mirar tu base solo cuando sea necesario.",
+        "threeBases": "Intenta llegar a 66 trabajadores (3 bases completamente saturadas). NOTA: ¡solo toma el gas que necesites cuando lo necesites!"
+      },
+      "prevStep": "Paso Anterior",
+      "nextStep": "Siguiente Paso",
+      "chooseUnits": {
+        "one": "Elige %{count} unidad:",
+        "many": "Elige %{count} unidades:"
+      }
+    },
+    "outro": {
+      "title": "Felicitaciones",
+      "content": "Has completado el entrenamiento de TheStaircase. ¡Gracias por usarlo!",
+      "thanks": "Un agradecimiento inmenso a JaKaTaK por crear la metodología TheStaircase."
+    },
+    "modal": {
+      "close": "Cerrar",
+      "settings": {
+        "title": "Configuración",
+        "changePlayerName": "Cambiar nombre de jugador",
+        "changeLanguage": "Cambiar Idioma",
+        "changeReplaysDirectory": "Cambiar directorio de repeticiones",
+        "replaysBrowse": "Buscar",
+        "changeRace": "Cambiar Raza",
+        "resetProgress": "Reiniciar progreso",
+        "resetProgressConfirm": "¿Estás seguro de que quieres reiniciar tu progreso? Esto eliminará todo tu progreso y tendrás que comenzar desde el principio.",
+        "saveChanges": "Guardar Cambios"
+      }
+    }
+  }
+}

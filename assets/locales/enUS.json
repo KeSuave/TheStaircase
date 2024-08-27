@@ -1,0 +1,116 @@
+{
+  "enUS": {
+    "intro": {
+      "welcome": "Welcome to TheStaircase",
+      "description": "TheStaircase is an alternative improvement method that focuses on creating a fun, and motivating experience for the player. It utilizes unit constrictions to prevent the player from being overwhelmed by the complexity of the game, and to encourage creativity and exploration. It uses measurable benchmarks for the absolute core elements of StarCraft 2: Gathering and spending resources efficiently. These benchmarks are recorded [automatically], allowing the player to devote all of their attention to playing the game.",
+      "rules": "Basic Rules",
+      "ruleOne": "Read the rules carefully on each step. (They do change!)",
+      "ruleTwo": "Only use the units shown to you on each step.",
+      "ruleThree": "Read suggestions on each step.",
+      "suggestions": "Overall Suggestions",
+      "suggestionOne": "Customizing your hotkeys will make it easier to play. I recommend using TheCore Lite* or at least using the grid layout.",
+      "suggestionTwo": "Learn to create groups and cameras locations.",
+      "suggestionThree": "Do not use the all army hotkey."
+    },
+    "info": {
+      "playerName": "Player name",
+      "playerNameDescription": "Your in-game player name (without clan tag)",
+      "race": "Race",
+      "replays": "Replays",
+      "replaysDescription": "This is where your replays are stored. You can get it by going into StarCraft, on the replays tab, click Show In Folder and copy the path from the explorer address.",
+      "replaysBrowse": "Browse"
+    },
+    "global": {
+      "continue": "Continue"
+    },
+    "steps": {
+      "stepone": "First Step",
+      "steptwo": "Second Step",
+      "stepthree": "Third Step",
+      "stepfour": "Fourth Step",
+      "stepfive": "Fifth Step",
+      "stepsix": "Sixth Step",
+      "rules": {
+        "title": "Rules",
+        "mineMinerals": "Mine minerals.",
+        "noGas": "Do not mine gas.",
+        "minimapAttack": "Attack only using minimap.",
+        "noBabysitting": "Do not watch your battles.",
+        "noCommandCard": "You may not click in the command card.",
+        "unitsPerProduction": "You may not queue more than two units per production facility.",
+        "productionPerBase": "You may not create b+2 %{supplyStructures} at a time, where b is the number of mineral saturated bases. (A mineral saturated base must have 16 workers mining minerals.)",
+        "unitControl": "Control your units to the best of your ability.",
+        "mineGas": "Mine gas."
+      },
+      "terranSupplyStructures": "supply depots",
+      "zergSupplyStructures": "overlords",
+      "protossSupplyStructures": "pylons",
+      "units": {
+        "title": "Units",
+        "changeChosenUnits": {
+          "one": "Change chosen unit",
+          "many": "Change chosen units"
+        }
+      },
+      "progress": {
+        "title": "Progress",
+        "description": "To be able to move on to the next step you must have at least five matches with at least 100 SQ (Spending Quotient)",
+        "descriptionAfterCompletion": "You are able to move on to the next step. You have at least five matches with at least 100 SQ (Spending Quotient).",
+        "status": {
+          "label": "Status",
+          "gameNotOpened": "Game not opened",
+          "waitingForMatch": "Waiting for match",
+          "waitingForMatchEnd": "Waiting for match end",
+          "analyzing": "Analyzing last match"
+        }
+      },
+      "motto": {
+        "title": "Your new motto",
+        "text": "My goal is to improve. I will not try to win the game now, I will focus on improving now. I will improve now so that I may win later."
+      },
+      "suggestions": {
+        "title": "Suggestions",
+        "haveFun": "Have as much fun as possible at all times!",
+        "experiment": "Experiment with the units as much as possible!",
+        "focus": "Focus as much as possible on your goals, and not on winning the game.",
+        "screenMovement": "Avoid arrow keys or moving the mouse to the edge of the screen to move.",
+        "screenPositions": "Click on the minimap and use location keys to move screen.",
+        "hotkeys": "Use Hotkeys, Control Groups, and Camera Location keys as much as possible.",
+        "threeBasesNoGas": "Try to get to 48 workers (3 fully base saturation).",
+        "aggressive": "Play aggressively; avoid static defenses as much as possible.",
+        "economy": "Try to keep your resources as low as possible.",
+        "ccToOrbital": "Upgrade your main and natural Command Centers to Orbital Commands as soon as possible.",
+        "ccEnergy": "Try to keep your Orbital Commands' energy low.",
+        "nexusEnergy": "Try to keep your Nexus' energy low.",
+        "queenEnergy": "Try to keep your Queens' energy low.",
+        "unitActive": "Try to keep at least one unit or group of units active on the map after your first scout, this will help train your multitasking.",
+        "avoidBaseCamera": "Try to look at your base only when necessary.",
+        "threeBases": "Try to get 66 workers (3 fully base saturation). NOTE: only take the gas you need when you need it!"
+      },
+      "prevStep": "Previous Step",
+      "nextStep": "Next Step",
+      "chooseUnits": {
+        "one": "Choose %{count} unit:",
+        "many": "Choose %{count} units:"
+      }
+    },
+    "outro": {
+      "title": "Congratulations",
+      "content": "You have now completed all the steps on this training. Thank you for giving TheStaircase a try.",
+      "thanks": "An immense thank you to JaKaTaK for creating the TheStaircase methodology."
+    },
+    "modal": {
+      "close": "Close",
+      "settings": {
+        "title": "Settings",
+        "changeLanguage": "Change Language",
+        "changeReplaysDirectory": "Change Replays Directory",
+        "replaysBrowse": "Browse",
+        "changeRace": "Change Race",
+        "resetProgress": "Reset Progress",
+        "resetProgressConfirm": "Are you sure you want to reset your progress? This will delete all your progress and you will have to start from the beginning.",
+        "saveChanges": "Save Changes"
+      }
+    }
+  }
+}
