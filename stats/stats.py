@@ -24,6 +24,8 @@ def get_last_replay(replays_folder):
 def get_stats_from_last_replay(replays_folder, player_name, race):
   replay_file = get_last_replay(replays_folder)
 
+  global prev_last_replay
+
   if replay_file == prev_last_replay:
     return 0, [], "VESPENE_NO", "ERROR_SAME_REPLAY"
 
@@ -47,7 +49,7 @@ def get_stats_from_last_replay(replays_folder, player_name, race):
       if player.did_collect_vespene:
         gas = "VESPENE_YES"
 
-      if player.race != race:
+      if player.play_race.lower() != race:
         error = "ERROR_WRONG_RACE"
 
       break

@@ -1,4 +1,3 @@
-import asyncio
 import customtkinter as ctk
 import json
 import os
@@ -15,7 +14,7 @@ from gui.pages.StepOne import StepOnePage
 from gui.pages.StepSix import StepSixPage
 from gui.pages.StepThree import StepThreePage
 from gui.pages.StepTwo import StepTwoPage
-from globals import APP_HEIGHT, APP_WIDTH, DEFAULT_CONFIG
+from globals import APP_HEIGHT, APP_WIDTH, DEFAULT_CONFIG, MIN_SQ_TO_PASS
 from gui.settings import SettingsWindow
 from sc2 import SC2
 
@@ -48,6 +47,7 @@ class App(ctk.CTk):
     self._choose_units_step = "stepfour"
     self._choose_units_num = 0
     self._settings_window = None
+    self._latest_matches_with_passing_sq = 0
 
     x = (self.winfo_screenwidth() - APP_WIDTH) // 2
     y = (self.winfo_screenheight() - APP_HEIGHT) // 2
@@ -65,8 +65,8 @@ class App(ctk.CTk):
                    self._config["race"],
                    self._config["replays"],
                    self._on_sc2_status_update,
-                   self._on_sc2_valid_stats,
-                   self._is_valid_stats)
+                   self._is_valid_stats,
+                   self._on_sc2_valid_stats)
 
     self._frames = {}
 
@@ -145,11 +145,8 @@ class App(ctk.CTk):
   def get_match_status(self):
     return self._sc2.get_status()
 
-  def get_valid_step_matches(self):
-    if not self._is_current_frame_a_step():
-      return 0
-
-    return len(self._config[f"{self._current_shown_frame.name}_{self._config["race"]}_sqs"])
+  def get_latest_matches_with_passing_sq(self):
+    return self._latest_matches_with_passing_sq
   
   def get_player_race(self):
     return self._config["race"]
@@ -206,19 +203,41 @@ class App(ctk.CTk):
 
   def _on_sc2_status_update(self):
     if self._is_current_frame_a_step():
-      self._current_shown_frame.update_status()
+      self._current_shown_frame.update_progress_status()
 
-  def _on_sc2_valid_stats(self):
+  def _on_sc2_valid_stats(self, stats):
     if self._is_current_frame_a_step():
+      if stats[0] < MIN_SQ_TO_PASS:
+        self._latest_matches_with_passing_sq = 0
+      else:
+        self._latest_matches_with_passing_sq += 1
+
+      self._config[f"{self._current_shown_frame.name}_{self._config["race"]}_sqs"].append(stats[0])
+
+      self._save_config()
       self._current_shown_frame.update_progress()
 
   def _is_valid_stats(self, stats):
     if self._is_current_frame_a_step():
-      return self._current_shown_frame.is_valid_stats(stats)
+      if self._current_shown_frame.is_valid_stats is not None:
+        return self._current_shown_frame.is_valid_stats(stats)
     
     return False
+  
+  def _set_latest_matches_with_passing_sq(self):
+    self._latest_matches_with_passing_sq = 0
+
+    if self._is_current_frame_a_step():
+      matches = self._config[f"{self._current_shown_frame.name}_{self._config["race"]}_sqs"]
+
+      for sq in reversed(matches):
+        if sq >= MIN_SQ_TO_PASS:
+          self._latest_matches_with_passing_sq += 1
+        else:
+          break
 
   def _on_closing(self):
+    self._save_config()
     self._sc2.shutdown()
 
     self.destroy()

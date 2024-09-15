@@ -3,7 +3,7 @@ import i18n
 
 from gui.images import UNIT_IMAGES
 from gui.pages.PageBase import PageBase
-from globals import ARROW, MIN_MATCHES_TO_PROGRESS, MIN_SQ_TO_PASS, SPECIAL_FONT, UPPER_FRAME_COLOR
+from globals import ARROW, MIN_MATCHES_TO_PROGRESS, SPECIAL_FONT, UPPER_FRAME_COLOR
 
 from gui.widgets.Button import ButtonWidget
 from gui.widgets.Label import FadedLabelWidget, NormalLabelWidget
@@ -43,16 +43,13 @@ class StepBasePage(PageBase):
     self._create_config()
 
   def is_valid_stats(self, stats):
-    if stats[0] < MIN_SQ_TO_PASS:
-      return False
-    
     if not self.allow_mine_vespene and stats[2] == "VESPENE_YES":
       return False
     
     for unit in stats[1]:
       if unit not in self.units:
         return False
-    
+
     return True
 
   def set_race(self):
@@ -68,7 +65,7 @@ class StepBasePage(PageBase):
     self._update_unit_images()
 
   def update_progress(self):
-    progress = self.controller.get_valid_step_matches() / MIN_MATCHES_TO_PROGRESS
+    progress = self.controller.get_latest_matches_with_passing_sq() / MIN_MATCHES_TO_PROGRESS
 
     if progress > 1:
       progress = 1
@@ -207,7 +204,7 @@ class StepBasePage(PageBase):
                                              i18n.t("steps.progress.status.label")+
                                              ": " + i18n.t("steps.progress.status.gameNotOpened"))
 
-    self._progress.set(self.controller.get_valid_step_matches() / MIN_MATCHES_TO_PROGRESS)
+    self._progress.set(self.controller.get_latest_matches_with_passing_sq() / MIN_MATCHES_TO_PROGRESS)
 
     self._progress.grid(row=1, column=0, padx=20, pady=20, sticky="ew")
     self._progress_description.grid(row=2, column=0, padx=20, sticky="ew")
@@ -329,4 +326,4 @@ class StepBasePage(PageBase):
     self.controller.show_frame(self.next_step, self.next_step != "chooseunits")
 
   def _get_next_button_state(self):
-    return "normal" if self.controller.get_valid_step_matches() >= MIN_MATCHES_TO_PROGRESS else "disabled"
+    return "normal" if self.controller.get_latest_matches_with_passing_sq() >= MIN_MATCHES_TO_PROGRESS else "disabled"

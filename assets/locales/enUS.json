@@ -54,14 +54,15 @@
       },
       "progress": {
         "title": "Progress",
-        "description": "To be able to move on to the next step you must have at least five matches with at least 100 SQ (Spending Quotient)",
+        "description": "To be able to move on to the next step you must have at least five consecutive matches with at least 100 SQ (Spending Quotient)",
         "descriptionAfterCompletion": "You are able to move on to the next step. You have at least five matches with at least 100 SQ (Spending Quotient).",
         "status": {
           "label": "Status",
           "gameNotOpened": "Game not opened",
           "waitingForMatch": "Waiting for match",
           "waitingForMatchEnd": "Waiting for match end",
-          "analyzing": "Analyzing last match"
+          "analyzing": "Analyzing last match",
+          "finishedAnalyzing": "Finished analyzing last match"
         }
       },
       "motto": {

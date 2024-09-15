@@ -54,14 +54,15 @@
       },
       "progress": {
         "title": "Progreso",
-        "description": "Para poder pasar al siguiente paso debes tener al menos cinco partidas con al menos 100 SQ (índice de gasto)",
+        "description": "Para poder pasar al siguiente paso debes tener al menos cinco partidas consecutivas con al menos 100 SQ (índice de gasto)",
         "descriptionAfterCompletion": "Puedes pasar al siguiente paso, tienes al menos cinco partidas con al menos 100 SQ (índice de gasto).",
         "status": {
           "label": "Estado",
           "gameNotOpened": "Juego no esta abierto",
           "waitingForMatch": "Esperando partida",
           "waitingForMatchEnd": "Esperando finalización de partida",
-          "analyzing": "Analizando última partida"
+          "analyzing": "Analizando última partida",
+          "finishedAnalyzing": "Analisis finalizado"
         }
       },
       "motto": {

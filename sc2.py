@@ -12,14 +12,14 @@ class SC2:
                race,
                replays_directory,
                on_status_update,
-               on_valid_stats,
-               is_valid_stats):
-    self.player_name = player_name
-    self.race = race
-    self.replays_directory = replays_directory
-    self.on_status_update = on_status_update
-    self.on_valid_stats = on_valid_stats
-    self.is_valid_stats = is_valid_stats
+               is_valid_stats,
+               on_valid_stats):
+    self._player_name = player_name
+    self._race = race
+    self._replays_directory = replays_directory
+    self._on_status_update = on_status_update
+    self._is_valid_stats = is_valid_stats
+    self._on_valid_stats = on_valid_stats
 
     self._active = False
     self._interval = 20 #seconds
@@ -29,7 +29,6 @@ class SC2:
 
     self._status = "gameNotOpened"
     self._previously_in_match = False
-    self._is_valid_stats_callback = None
 
     self._thread.start()
 
@@ -77,7 +76,8 @@ class SC2:
     ui = await self._fetch_ui()
 
     if "activeScreens" not in ui:
-      self._update_status("gameNotOpened")
+      if self._status != "gameNotOpened":
+        self._update_status("gameNotOpened")
 
       return
 
@@ -88,6 +88,9 @@ class SC2:
       self._update_status("waitingForMatchEnd")
       self._previously_in_match = True
     else:
+      if self._status == "waitingForMatch":
+        return
+
       self._update_status("waitingForMatch")
 
       if self._previously_in_match:
@@ -98,15 +101,18 @@ class SC2:
   def _analyze_last_match(self):
     self._update_status("analyzing")
 
-    stats = get_stats_from_last_replay(self.replays_directory, self.player_name, self.race)
+    stats = get_stats_from_last_replay(self._replays_directory, self._player_name, self._race)
 
-    if stats[3] == "ERROR_NONE" and self._is_valid_stats_callback(stats) and self.on_valid_stats is not None:
-      self.on_valid_stats(stats)
+    if stats[3] == "ERROR_NONE" and \
+      self._is_valid_stats is not None and \
+        self._is_valid_stats(stats) and \
+          self._on_valid_stats is not None:
+            self._on_valid_stats(stats)
 
     self._update_status("finishedAnalyzing")
 
   def _update_status(self, status):
     self._status = status
 
-    if self._status_callback is not None:
-      self.on_status_update()
+    if self._on_status_update is not None:
+      self._on_status_update()
